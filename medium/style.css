@@ -1,0 +1,872 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face {
+    font-family: "Prevalent";
+    src: url("./fonts/Prevalent-Regular.otf") format("opentype");
+}
+
+
+
+
+
+/* ==================================================
+   RESET
+================================================== */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+/* ==================================================
+   ROOT VARIABLES
+================================================== */
+
+:root{
+  --white: #FFFFFF;
+  --cream: #FCF4ED;
+  --green-light: #62922B;
+  --black: #1A1A1A;
+  --yellow: #F6B83C;
+  --green-dark: #1D603E;
+  --red: #D72531;
+  --yellow-dark: #F8B230;
+}
+
+
+
+/* ==================================================
+   GLOBAL STYLES
+================================================== */
+
+body{
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 16px;
+  background-color: var(--cream);
+  padding: 32px 120px;
+  overflow-x: hidden;
+  
+}
+
+
+
+/* ===================================================================== */
+
+/* ========================= HEADER / NAVBAR ========================= */
+
+.header{
+    padding: 0 0 32px 0;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo img{
+    width: 150px;
+    display: block;
+}
+
+/* =========================
+   NAV LINKS
+========================= */
+
+.nav-links{
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+.nav-links li{
+    list-style: none;
+}
+
+.nav-links a{
+    text-decoration: none;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: #111111;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover{
+    color: #2E7D32;
+}
+
+.nav-links a.active{
+    color: #2E7D32;
+}
+
+.nav-links a.active::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    width: 40px;
+    height: 4px;
+    border-radius: 50px;
+    background-color: #2E7D32;
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.nav-actions{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* =========================
+   SEARCH + CART
+========================= */
+
+.search-wrapper{
+    padding: 8px 18px;
+    border: 1.5px solid #5B5B5B;
+    border-radius: 999px;
+    background: #FFFDF8;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* =========================
+   SEARCH BOX
+========================= */
+
+.search-box{
+    width: 320px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.search-box img{
+    width: 22px;
+}
+
+.search-box input{
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    font-weight: 400;
+    color: #222;
+    font-family: "Poppins", sans-serif;
+}
+
+.search-box input::placeholder{
+    color: #8D8D8D;
+}
+
+/* =========================
+   DIVIDER
+========================= */
+
+.search-divider{
+    width: 1.5px;
+    height: 32px;
+    background-color: #A0A0A0;
+}
+
+/* =========================
+   CART BUTTON
+========================= */
+
+.cart-btn{
+    width: 42px;
+    height: 42px;
+
+    font-weight: 600;
+    border: none;
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    cursor: pointer;
+}
+
+.cart-btn img{
+    width: 24px;
+}
+
+.cart-count{
+    position: absolute;
+    top: -24px;
+    right: -24px;
+
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+
+    background-color: #E52B38;
+    color: #fff;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero-section{
+    padding: 40px 0 60px;
+    position: relative;
+    padding-bottom: 10rem; /* overlap ke liye space */
+}
+
+.hero-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* =========================
+   LEFT CONTENT
+========================= */
+
+.hero-content{
+    width: 40%;
+}
+
+.hero-tag{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border: 1.5px solid #5D8C4E;
+    border-radius: 999px;
+    margin-bottom: 30px;
+}
+
+.hero-tag img{
+    width: 18px;
+}
+
+.hero-tag span{
+    font-size: 16px;
+    color: #356B35;
+    font-weight: 500;
+}
+
+.hero-heading{
+    font-family: "Prevalent", sans-serif;
+    font-size: 100px;
+    font-weight: 400;
+    line-height: 0.95;
+    color: #111111;
+    margin-bottom: 24px;
+}
+
+.hero-heading .grilled{
+    color: var(--green-dark);
+}
+
+.hero-description{
+    font-size: 16px;
+    line-height: 1.7;
+    color: #666666;
+
+    margin-bottom: 40px;
+}
+
+/* =========================
+   HERO ACTIONS
+========================= */
+
+.hero-actions{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    margin-bottom: 50px;
+}
+
+.add-cart-btn{
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: 24px;
+    padding: 16px 32px 16px 16px;
+    border: none;
+    border-radius: 999px;
+    background: #111111;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+}
+
+
+.add-cart-btn img{
+    width: 24px;
+}
+.add-cart-btn .cart-wrapper{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.quantity-box{
+    padding: 16px 32px;
+    border: 1.5px solid #DDDDDD;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: white;
+}
+
+.quantity-box button{
+    border: none;
+    background: transparent;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.quantity-box span{
+    font-size: 20px;
+    font-weight: 600;
+    color: #D8343B;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.hero-features{
+    display: flex;
+    align-items: center;
+    justify-content:flex-start ;
+    gap: 40px;
+}
+
+.feature-item{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+/* ICON WRAPPER */
+
+.feature-icon{
+    width: 3.5rem;
+    height: 3.5rem;
+
+    border-radius: 999px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.feature-icon img{
+    width: 32px;
+}
+
+/* BORDER COLORS */
+
+.green-border{
+    border: 1.5px solid var(--green-light)
+}
+
+.yellow-border{
+    border: 1.5px solid var(--yellow);
+}
+
+.red-border{
+    border: 1.5px solid var(--red);
+}
+
+/* TEXT */
+
+.feature-content h4{
+    font-size: 20px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    color: #111111;
+}
+
+.feature-content p{
+    font-size: 14px;
+    color: #666666;
+}
+/* =========================
+   CENTER IMAGE AREA
+========================= */
+
+.hero-image-area{
+    width: 40%;
+
+    position: absolute;
+
+    left: 50%;
+    top: 2rem;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 10;
+}
+
+/* =========================
+   BACKGROUND SHAPES
+========================= */
+
+.circle{
+    position: absolute;
+    z-index: 1;
+
+    filter: blur(2px);
+}
+
+/* BIG ORGANIC SHAPE */
+
+.circle-1{
+    width: 36rem;
+    height: 40rem;
+    position: absolute;
+    top: 0;
+    left: 30%;
+
+    background: rgba(213, 225, 183, 0.45);
+
+    border-radius: 48% 52% 46% 54% / 42% 45% 55% 58%;
+
+    transform: rotate(-12deg);
+}
+
+/* SMALL INNER SHAPE */
+
+.circle-2{
+    width: 35rem;
+    height: 30rem;
+    position: absolute;
+    top: 0;
+    left: 30%;
+
+    background: rgba(196, 214, 157, 0.55);
+
+    border-radius: 58% 42% 52% 48% / 45% 56% 44% 55%;
+
+    transform: rotate(18deg);
+}
+
+.main-chips{
+    width: 750px;
+    position: absolute;
+    top: 0;
+    left: 10%;
+    z-index: 12;
+    filter: drop-shadow(0px 40px 40px rgba(0,0,0,0.35));
+    transform: rotate(-5deg);
+}
+
+.crispy-label{
+    width: 400px;
+    position: absolute;
+    top: 250px;
+    left: 0px;
+    z-index: 100
+}
+
+.triangle-shape{
+    width: 60px;
+    position: absolute;
+    top: 0px;
+    right: -80px;
+}
+
+/* =========================
+   RIGHT SIDE INFO
+========================= */
+
+.hero-right-info{
+    width: 20%;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* =========================
+   VERTICAL DASHED LINE
+========================= */
+
+.vertical-line{
+    position: absolute;
+
+    left: 2.2rem;
+    top: 4.5rem;
+
+    width: 2px;
+    height: 14rem;
+
+    border-left: 2px dashed #F2C55C;
+
+    z-index: 0;
+}
+
+/* =========================
+   INFO CARD
+========================= */
+
+.info-card{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================
+   ICON
+========================= */
+
+.info-icon{
+    width: 4.5rem;
+    height: 4.5rem;
+
+    border-radius: 999px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.info-icon img{
+    width: 2rem;
+}
+
+/* BG COLORS */
+
+.green-bg{
+    background-color: #17884B;
+}
+
+.red-bg{
+    background-color: #E52745;
+}
+
+.yellow-bg{
+    background-color: #F4BF39;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.info-content h3{
+    font-size: 20px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    line-height: 1;
+    color: #111111;
+}
+
+.info-content p{
+    font-size: 14px;
+    line-height: 20px;
+    color: #777777;
+}
+
+/* =========================
+   FLAVOUR SECTION
+========================= */
+
+.flavour-section{
+    position: relative;
+    z-index: 2;
+    margin-top: -1rem; /* upar kheecho */
+
+}
+
+.flavour-wrapper{
+    background: linear-gradient(135deg, #0B6B3A, #0E7B43);
+
+    border-radius: 2.5rem;
+
+    padding: 3rem 4rem;
+
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* =========================
+   BG SHAPES
+========================= */
+
+.flavour-wrapper::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.04) 20%,
+            transparent 20%,
+            transparent 40%,
+            rgba(255,255,255,0.04) 40%,
+            rgba(255,255,255,0.04) 60%,
+            transparent 60%
+        );
+
+    z-index: 1;
+}
+
+/* =========================
+   LEFT SIDE
+========================= */
+
+.flavour-left{
+    width: 20%;
+    position: relative;
+    z-index: 2;
+}
+
+.flavour-left h2{
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 32px;
+    line-height: 36px;
+    font-weight: 400;
+    color: #FFFFFF;
+
+    margin-bottom: 1rem;
+}
+
+.line-design{
+    width: 2.5rem;
+    height: 0.2rem;
+
+    background: #F5C64C;
+
+    border-radius: 999px;
+
+    margin-bottom: 2rem;
+}
+
+.slider-buttons{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.slider-btn{
+    width: 3.5rem;
+    height: 3.5rem;
+
+    border: none;
+    border-radius: 999px;
+
+    background: #F3F0E8;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.slider-btn img{
+    width: 1rem;
+}
+
+.active-btn{
+    background: #FFFFFF;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.flavour-cards{
+    
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.flavour-card{
+    width: 100%;
+    background: #FFFDF8;
+
+    border-radius: 1.5rem;
+
+    padding: 1.2rem 1.2rem 1.2rem 0;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    position: relative;
+    overflow: visible;
+}
+
+/* =========================
+   CARD IMAGE
+========================= */
+
+.card-image{
+    width: 42%;
+    position: relative;
+}
+
+.card-image img{
+    width: 15rem;
+    position: absolute;
+    left: -1.8rem;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    filter: drop-shadow(0px 18px 18px rgba(0,0,0,0.28));
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.card-content{
+    width: 50%;
+    margin-left: auto;
+}
+
+.card-content h3{
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #111111;
+    margin-bottom: 4px;
+}
+
+.rating-row{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    margin-bottom: 1rem;
+}
+
+.stars{
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.stars img{
+    width: 0.95rem;
+    display: block;
+}
+
+.rating-row span{
+    font-size: 0.85rem;
+    color: #444444;
+}
+
+.card-content h4{
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    color: #111111;
+
+    margin-bottom: 1rem;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.order-btn{
+    height: 2.8rem;
+    padding: 0 1rem;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    border: none;
+    border-radius: 999px;
+    background: #EB2D45;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    cursor: pointer;
+}
+
+.order-btn img{
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
+}
+
+/* =========================  SIDE SHAPES ========================= */
+
+.side-shape{
+    position: absolute;
+    width: 20rem;
+    z-index: -10;
+    opacity: 0.5;
+}
+
+/* LEFT */
+
+.left-shape{
+    left: -10rem;
+    bottom: -15rem;
+}
+
+/* RIGHT */
+
+.right-shape{
+    right: -10rem;
+    top: 5rem;
+}
